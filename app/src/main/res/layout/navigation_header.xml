@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/nasa"
+    android:layout_width="@dimen/navHeaderWidth"
+    android:layout_height="@dimen/navHeaderHeight"
+    android:layout_marginTop="@dimen/navHeaderMarginTop" />
