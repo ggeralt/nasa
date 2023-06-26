@@ -10,12 +10,14 @@
     <string name="cancle">Cancel</string>
     <string name="date">Date</string>
     <string name="title">Title</string>
-    <string name="username">username</string>
-    <string name="password">password</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
     <string name="log_in">Log In</string>
     <string name="sign_up">Sign Up</string>
     <string name="map">Map</string>
     <string name="cannot_get_location">Cannot get location.</string>
     <string name="your_location">Your location</string>
-    <string name="getting_your_location">Getting your location...</string>
+    <string name="getting_your_location">Getting your location…</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
 </resources>
