@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import hr.algebra.nasa.databinding.ActivitySignUpBinding
@@ -31,9 +32,9 @@ class SignUpActivity : AppCompatActivity() {
             val password = binding.password.text.toString()
             val confirmPassword = binding.confirmPassword.text.toString()
 
-            if(email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()){
+            if(email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()) {
                 if(password == confirmPassword){
-                    firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
+                    firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
                         if(it.isSuccessful) {
                             val intent = Intent(this, LogInActivity::class.java)
                             startActivity(intent)

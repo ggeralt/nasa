@@ -19,11 +19,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Material3.Dark"
+        android:theme="@style/Theme.Nasa"
         tools:targetApi="31">
-        <activity
-            android:name=".firebase.SignUpActivity"
-            android:exported="false" />
         <activity
             android:name=".firebase.LogInActivity"
             android:exported="true">
@@ -33,6 +30,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".firebase.SignUpActivity"
+            android:exported="false" />
         <activity
             android:name=".ItemPagerActivity"
             android:exported="false">
@@ -74,11 +74,6 @@
             android:noHistory="true"
             android:screenOrientation="fullSensor"
             android:theme="@style/SplashScreenTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
             <meta-data
                 android:name="android.app.lib_name"

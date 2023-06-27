@@ -31,8 +31,8 @@ class LogInActivity : AppCompatActivity() {
             val email = binding.email.text.toString()
             val password = binding.password.text.toString()
 
-            if(email.isNotEmpty() && password.isNotEmpty()){
-                firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
+            if(email.isNotEmpty() && password.isNotEmpty()) {
+                firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                     if(it.isSuccessful) {
                         val intent = Intent(this, SplashScreenActivity::class.java)
                         startActivity(intent)
