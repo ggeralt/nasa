@@ -34,16 +34,17 @@ class LogInActivity : AppCompatActivity() {
             if(email.isNotEmpty() && password.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                     if(it.isSuccessful) {
+                        binding.tvLogInError.text = ""
                         val intent = Intent(this, SplashScreenActivity::class.java)
                         startActivity(intent)
                     }
                     else {
-                        Toast.makeText(this, "Login failed!", Toast.LENGTH_SHORT).show()
+                        binding.tvLogInError.text = it.exception?.message
                     }
                 }
             }
             else {
-                Toast.makeText(this, "Empty fields are not allowed", Toast.LENGTH_SHORT).show()
+                binding.tvLogInError.text = "Empty fields are not allowed."
             }
         }
     }

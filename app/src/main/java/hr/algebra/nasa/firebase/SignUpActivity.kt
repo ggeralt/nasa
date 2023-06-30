@@ -36,20 +36,21 @@ class SignUpActivity : AppCompatActivity() {
                 if(password == confirmPassword){
                     firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
                         if(it.isSuccessful) {
+                            binding.tvSignUpError.text = ""
                             val intent = Intent(this, LogInActivity::class.java)
                             startActivity(intent)
                         }
                         else {
-                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                            binding.tvSignUpError.text = it.exception?.message
                         }
                     }
                 }
                 else {
-                    Toast.makeText(this, "Passwords are not matching", Toast.LENGTH_SHORT).show()
+                    binding.tvSignUpError.text = "Passwords are not matching."
                 }
             }
             else {
-                Toast.makeText(this, "Empty fields are not allowed", Toast.LENGTH_SHORT).show()
+                binding.tvSignUpError.text = "Empty fields are not allowed."
             }
         }
     }
